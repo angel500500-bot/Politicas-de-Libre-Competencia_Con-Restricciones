@@ -93,6 +93,9 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
   .pad{padding:clamp(14px,2vw,24px) clamp(18px,2.4vw,34px)}
 
+  .fitwrap > .card{
+    min-height:100%;}
+
   /* Etiqueta pequeña sobre los títulos */
   .kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--theme);background:var(--theme-soft);padding:7px 13px;border-radius:99px;margin-bottom:14px}
 
@@ -122,14 +125,18 @@
 
 
   /* Estilo especial de las escenas tipo portada/hero */
-  .hero{background:linear-gradient(155deg,#13284b,#0c1b33);color:#fff}
+  .hero{background:linear-gradient(155deg,#13284b,#0c1b33);color:#fff;height:100%;}
   .hero .kicker{background:rgba(255,255,255,.12);color:#cfe0ff}
   .hero h1.t,.hero h2.t{color:#fff}
   .hero .lead{color:#c9d8f2}  
   .hero .media{min-height:clamp(220px,35vh,330px)} /* Ajusta el tamaño de la imagen de portada */
-  .hero .split{grid-template-columns:.8fr 1.2fr} /* Aumenta el ancho de la imagen de portada */
+  .hero .split{grid-template-columns:.8fr 1.2fr;flex:1;min-height:0;} /* Aumenta el ancho de la imagen de portada */
   .hero .media.contain{background:transparent;box-shadow:none}
   .hero .media.contain img{object-fit:contain}
+  .hero .pad{
+    height:100%;
+    display:flex;
+    flex-direction:column;}
 
   /* Información adicional en forma de etiquetas */
   .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
